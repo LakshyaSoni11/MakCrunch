@@ -1,0 +1,9 @@
+- [x] Convert Header.tsx to TSX: add React import, define HeaderProps interface, type the component
+- [x] Convert Hero.tsx to TSX: define HeroProps interface, type the forwardRef
+- [x] Convert About.tsx to TSX: add React import, define AboutProps interface, type the forwardRef
+- [x] Convert CTA.tsx to TSX: add React and lucide imports, define CTAProps interface, fix props, type the component
+- [x] Convert Footer.tsx to TSX: add React and lucide imports, define FooterProps interface, fix refs usage, type the forwardRef
+- [x] Convert Grades.tsx to TSX
+- [x] Convert Process.tsx to TSX
+- [x] Convert WhyUs.tsx to TSX
+- [x] Check ContactPage.tsx (0 bytes, perhaps skip)
