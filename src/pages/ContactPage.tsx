@@ -44,7 +44,7 @@ const initialFormData: FormData = {
   message: ''
 };
 
-export default function ContactPage({ onBackToHome }: ContactPageProps): JSX.Element {
+export default function ContactPage(): JSX.Element {
   const [formData, setFormData] = useState<FormData>(initialFormData);
   const [formErrors, setFormErrors] = useState<FormErrors>({});
   const [formSubmitted, setFormSubmitted] = useState<boolean>(false);

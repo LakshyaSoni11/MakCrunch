@@ -230,7 +230,16 @@ const Hero: React.FC = () => {
         </p>
 
         {/* ✅ CTA Button */}
-        
+        <div className="hero-cta flex flex-col sm:flex-row items-center justify-center pt-10 gap-4">
+          <button
+            ref={ctaRef}
+            onClick={() => navigate("/contact")}
+            className="group px-10 py-5 bg-gradient-to-r from-emerald-600 to-emerald-700 text-white text-lg font-bold rounded-2xl shadow-2xl hover:shadow-emerald-500/40 transition-all inline-flex items-center space-x-3 hover:-translate-y-1"
+          >
+            <span>Request Bulk Quote</span>
+            <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
+          </button>
+        </div>
 
         {/* ✅ Stats Section */}
         <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
@@ -250,16 +259,7 @@ const Hero: React.FC = () => {
 
         <HealthBenefits />
 
-        <div className="hero-cta flex flex-col sm:flex-row items-center justify-center pt-10 gap-4">
-          <button
-            ref={ctaRef}
-            onClick={() => navigate("/contact")}
-            className="group px-10 py-5 bg-gradient-to-r from-emerald-600 to-emerald-700 text-white text-lg font-bold rounded-2xl shadow-2xl hover:shadow-emerald-500/40 transition-all inline-flex items-center space-x-3 hover:-translate-y-1"
-          >
-            <span>Request Bulk Quote</span>
-            <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
-          </button>
-        </div>
+        
       </div>
     </section>
   );
