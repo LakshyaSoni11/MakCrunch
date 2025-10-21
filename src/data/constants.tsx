@@ -9,8 +9,12 @@ import {
   ShieldCheck,
   Truck,
   BarChart3,
-  Factory, Sparkles, FlaskConical, Heart, Bone, Wind, Shield, Activity, Droplet, Brain, Zap
+  Factory, Sparkles, FlaskConical, Heart, Bone, Wind, Shield, Activity, Droplet, Brain, Zap, 
 } from 'lucide-react';
+import bott_img from "../public/assets/bottom-right.png";
+import center_ing from "../public/assets/center.png";
+import top_img from "../public/assets/top-left.png";
+
 
 export interface Grade {
   name: string;
@@ -77,7 +81,7 @@ export const grades: Grade[] = [
 
 export const stats: Stat[] = [
   { value: '500', label: 'Tons/Month Capacity', icon: <Package className="w-6 h-6" /> },
-  { value: '25', label: 'Countries Exported', icon: <Globe className="w-6 h-6" /> },
+  { value: '25', label: 'PAN india Dilevering Cities', icon: <Globe className="w-6 h-6" /> },
   { value: '15', label: 'Years Experience', icon: <Award className="w-6 h-6" /> },
   { value: '200', label: 'Happy B2B Clients', icon: <Users className="w-6 h-6" /> }
 ];
@@ -260,54 +264,74 @@ export const whyUsFeatures: Feature[] = [
   }
 ];
 
-export const aboutStats: AboutStat[] = [
+export const aboutStats = [
   {
-    icon: <Factory className="w-10 h-10 text-emerald-600 mb-3" />,
-    title: 'ISO Certified Facility',
-    description: 'Modern processing infrastructure'
+    icon: 'Factory',
+    title: 'ISO-Certified Processing Unit',
+    description:
+      'State-of-the-art facility ensuring international quality standards in cleaning, grading, and packaging of raw Makhana.',
   },
   {
-    icon: <Truck className="w-10 h-10 text-amber-600 mb-3" />,
-    title: 'Global Logistics',
-    description: 'Container & FCL shipping'
-  }
+    icon: 'ShieldCheck',
+    title: 'FSSAI Licensed & Govt. Lab Tested',
+    description:
+      'Fully compliant with Food Safety and Standards Authority of India (FSSAI) regulations, with every batch tested in NABL-accredited government labs.',
+  },
+  {
+    icon: 'Award',
+    title: 'APEDA Registration (RCMC)',
+    description:
+      'Registered with the Agricultural and Processed Food Products Export Development Authority (APEDA) under the Ministry of Commerce, Government of India.',
+  },
+  {
+    icon: 'FileCheck',
+    title: 'Importer–Exporter Code (IEC)',
+    description:
+      'Authorized by the Directorate General of Foreign Trade (DGFT) for international trade of agricultural commodities.',
+  },
+  {
+    icon: 'Briefcase',
+    title: 'GST & Company Registration',
+    description:
+      'Registered private limited entity under the Ministry of Corporate Affairs with valid GST and PAN credentials for transparent business operations.',
+  },
+  {
+    icon: 'Globe',
+    title: 'Global Logistics & Export Expertise',
+    description:
+      'Seamless containerized shipping (FCL & LCL) through major Indian ports, ensuring timely and reliable global delivery.',
+  },
 ];
 
 export const floatingImages: FloatingImage[] = [
   {
-    src:
-      '../../dist/assets/top-left.png',
+    src: top_img,
     className:
       'floating-image-1 absolute top-32 right-20 w-32 h-32 rounded-2xl object-cover opacity-30 hidden lg:block'
   },
   {
-    src:
-      '../../dist/assets/top-left.png',
+    src: top_img,
     className:
-      'floating-image-1 absolute top-32 left-20 w-32 h-32 rounded-2xl object-cover opacity-30 hidden lg:block'
+      'floating-image-2 absolute top-32 left-20 w-32 h-32 rounded-2xl object-cover opacity-30 hidden lg:block'
   },
   {
-    src:
-      '../../dist/assets/center.png',
+    src: center_ing,
     className:
-      'floating-image-2 absolute bottom-10 right-16 w-40 h-40 rounded-2xl object-cover opacity-30  hidden lg:block'
+      'floating-image-3 absolute bottom-10 right-16 w-40 h-40 rounded-2xl object-cover opacity-30 hidden lg:block'
   },
   {
-    src:
-      '../../dist/assets/center.png',
+    src: center_ing,
     className:
-      'floating-image-2 absolute bottom-10 left-16 w-40 h-40 rounded-2xl object-cover opacity-30  hidden lg:block'
+      'floating-image-4 absolute bottom-10 left-16 w-40 h-40 rounded-2xl object-cover opacity-30 hidden lg:block'
   },
   {
-    src:
-      '../../dist/assets/bottom-right.png',
+    src: bott_img,
     className:
-      'floating-image-3 absolute top-1/2 right-1/4 w-28 h-28 rounded-2xl object-cover opacity-30  hidden lg:block'
+      'floating-image-5 absolute top-1/2 right-1/4 w-28 h-28 rounded-2xl object-cover opacity-30 hidden lg:block'
   },
   {
-    src:
-      '../../dist/assets/bottom-right.png',
+    src: bott_img,
     className:
-      'floating-image-3 absolute top-60 left-1/4 w-28 h-28 rounded-2xl object-cover opacity-30  hidden lg:block'
+      'floating-image-6 absolute top-60 left-1/4 w-28 h-28 rounded-2xl object-cover opacity-30 hidden lg:block'
   }
 ];

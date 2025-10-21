@@ -1,81 +1,97 @@
 import React from 'react';
-import { Leaf, Menu, X } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
+import { Menu, X } from 'lucide-react';
 
 interface HeaderProps {
   mobileMenuOpen: boolean;
   setMobileMenuOpen: (open: boolean) => void;
-  scrollToSection: (ref: React.RefObject<HTMLElement>) => void;
-  handleContactClick: () => void;
-  refs: {
-    heroRef: React.RefObject<HTMLElement>;
-    aboutRef: React.RefObject<HTMLElement>;
-    gradesRef: React.RefObject<HTMLElement>;
-    processRef: React.RefObject<HTMLElement>;
-  };
 }
 
-function Header({ mobileMenuOpen, setMobileMenuOpen, scrollToSection, handleContactClick, refs }: HeaderProps) {
+const Header: React.FC<HeaderProps> = ({ mobileMenuOpen, setMobileMenuOpen }) => {
+  const location = useLocation();
+
+  const navItems = [
+    { name: 'Home', path: '/' },
+    { name: 'About', path: '/about' },
+    { name: 'Grades', path: '/health-benefits' }, // or /grades if you rename the page
+    { name: 'Process', path: '/process' },
+    { name: 'Why Us', path: '/why-us' },
+  ];
+
+  const isActive = (path: string) => location.pathname === path;
+
   return (
     <header className="bg-white/95 backdrop-blur-md shadow-lg fixed w-full top-0 z-50">
       <div className="container mx-auto px-6 py-4">
         <div className="flex justify-between items-center">
-          <div className="flex items-center space-x-3 header-logo">
-            <div>
-             <img src="../../dist/assets/logo.png" className='h-10 w-18' alt="" />
-            </div>
+          {/* LOGO */}
+          <div className="flex items-center space-x-1">
+            <Link to="/">
+              <img src="/src/public/assets/logo.png" className="h-12 w-auto" alt="FoxNut Exports Logo" />
+            </Link>
+             <span className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-emerald-800">
+            MakCrunch
+          </span>
           </div>
 
+          {/* DESKTOP NAV */}
           <nav className="hidden md:flex items-center space-x-6">
-            <button onClick={() => scrollToSection(refs.heroRef)} className="nav-item text-gray-700 hover:text-emerald-600 font-medium transition-colors">
-              Home
-            </button>
-            <button onClick={() => scrollToSection(refs.aboutRef)} className="nav-item text-gray-700 hover:text-emerald-600 font-medium transition-colors">
-              About
-            </button>
-            <button onClick={() => scrollToSection(refs.gradesRef)} className="nav-item text-gray-700 hover:text-emerald-600 font-medium transition-colors">
-              Grades
-            </button>
-            <button onClick={() => scrollToSection(refs.processRef)} className="nav-item text-gray-700 hover:text-emerald-600 font-medium transition-colors">
-              Process
-            </button>
-            <button
-              onClick={handleContactClick}
-              className="nav-item px-6 py-2.5 bg-gradient-to-r from-emerald-600 to-emerald-700 text-white rounded-xl hover:from-emerald-700 hover:to-emerald-800 transition-all font-semibold shadow-lg hover:shadow-xl"
+            {navItems.map((item) => (
+              <Link
+                key={item.name}
+                to={item.path}
+                className={`text-gray-700 font-medium transition-colors hover:text-emerald-600 ${
+                  isActive(item.path) ? 'text-emerald-700 font-semibold' : ''
+                }`}
+              >
+                {item.name}
+              </Link>
+            ))}
+
+            <Link
+              to="/contact"
+              className="px-6 py-2.5 bg-gradient-to-r from-emerald-600 to-emerald-700 text-white rounded-xl hover:from-emerald-700 hover:to-emerald-800 transition-all font-semibold shadow-lg hover:shadow-xl"
             >
               Get Quote
-            </button>
+            </Link>
           </nav>
 
-          <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="md:hidden text-gray-700">
+          {/* MOBILE MENU BUTTON */}
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="md:hidden text-gray-700 focus:outline-none"
+          >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
 
+        {/* MOBILE NAV */}
         {mobileMenuOpen && (
           <nav className="md:hidden mt-4 pb-4 space-y-3 animate-fadeIn">
-            <button onClick={() => scrollToSection(refs.heroRef)} className="block w-full text-left text-gray-700 hover:text-emerald-600 font-medium transition-colors py-2">
-              Home
-            </button>
-            <button onClick={() => scrollToSection(refs.aboutRef)} className="block w-full text-left text-gray-700 hover:text-emerald-600 font-medium transition-colors py-2">
-              About
-            </button>
-            <button onClick={() => scrollToSection(refs.gradesRef)} className="block w-full text-left text-gray-700 hover:text-emerald-600 font-medium transition-colors py-2">
-              Grades
-            </button>
-            <button onClick={() => scrollToSection(refs.processRef)} className="block w-full text-left text-gray-700 hover:text-emerald-600 font-medium transition-colors py-2">
-              Process
-            </button>
-            <button
-              onClick={handleContactClick}
+            {navItems.map((item) => (
+              <Link
+                key={item.name}
+                to={item.path}
+                onClick={() => setMobileMenuOpen(false)}
+                className={`block w-full text-left text-gray-700 hover:text-emerald-600 font-medium transition-colors py-2 ${
+                  isActive(item.path) ? 'text-emerald-700 font-semibold' : ''
+                }`}
+              >
+                {item.name}
+              </Link>
+            ))}
+            <Link
+              to="/contact"
+              onClick={() => setMobileMenuOpen(false)}
               className="block w-full text-left px-6 py-2.5 bg-gradient-to-r from-emerald-600 to-emerald-700 text-white rounded-xl hover:from-emerald-700 hover:to-emerald-800 transition-all font-semibold"
             >
               Get Quote
-            </button>
+            </Link>
           </nav>
         )}
       </div>
     </header>
   );
-}
+};
 
 export default Header;

@@ -1,103 +1,47 @@
-import React, { useState, useRef } from 'react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+// Components
 import Header from './components/Header';
-import Hero from './components/Hero';
-import About from './components/About';
-import HealthBenefits from './components/HealthBenefits';
-import Ingredients from './components/Ingredients';
-import Process from './components/Process';
-import WhyUs from './components/WhyUs';
-import CTA from './components/CTA';
 import Footer from './components/Footer';
-import ContactPage from './components/ContactPage';
 
-gsap.registerPlugin(ScrollTrigger);
-
-type DivRef = React.RefObject<HTMLDivElement>;
-
-interface HeaderRefs {
-  heroRef?: DivRef;
-  aboutRef?: DivRef;
-  healthBenefitsRef?: DivRef;
-  ingredientsRef?: DivRef;
-  processRef?: DivRef;
-  whyUsRef?: DivRef;
-  ctaRef?: DivRef;
-}
+// Pages
+import Home from './pages/Hero';
+import About from './pages/About';
+import HealthBenefits from './pages/HealthBenefits';
+import Ingredients from './pages/Ingredients';
+import Process from './pages/Process';
+import WhyUs from './pages/WhyUs';
+import Contact from './pages/ContactPage';
+// import NotFound from './pages/NotFound'; // You can enable this later if needed
 
 function App(): JSX.Element {
-  const [showContactPage, setShowContactPage] = useState<boolean>(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false);
-
-  const heroRef = useRef<HTMLDivElement>(null);
-  const aboutRef = useRef<HTMLDivElement>(null);
-  const healthBenefitsRef = useRef<HTMLDivElement>(null);
-  const ingredientsRef = useRef<HTMLDivElement>(null);
-  const processRef = useRef<HTMLDivElement>(null);
-  const whyUsRef = useRef<HTMLDivElement>(null);
-  const ctaRef = useRef<HTMLDivElement>(null);
-
-  const scrollToSection = (sectionRef: DivRef) => {
-    sectionRef.current?.scrollIntoView({ behavior: 'smooth' });
-    setMobileMenuOpen(false);
-  };
-
-  const handleContactClick = () => {
-    setShowContactPage(true);
-    setMobileMenuOpen(false);
-    if (typeof window !== 'undefined') window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
-  const handleBackToHome = () => {
-    setShowContactPage(false);
-    if (typeof window !== 'undefined') window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
-  if (showContactPage) {
-    return <ContactPage onBackToHome={handleBackToHome} />;
-  }
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-stone-50 via-amber-50 to-emerald-50 overflow-hidden">
-      <Header
-        mobileMenuOpen={mobileMenuOpen}
-        setMobileMenuOpen={setMobileMenuOpen}
-        scrollToSection={scrollToSection}
-        handleContactClick={handleContactClick}
-        refs={{
-          heroRef,
-          aboutRef,
-          healthBenefitsRef,
-          ingredientsRef,
-          processRef,
-          whyUsRef,
-          ctaRef
-        } as HeaderRefs}
-      />
+    <Router>
+      <div className="min-h-screen flex flex-col bg-gradient-to-br from-stone-50 via-amber-50 to-emerald-50">
+        {/* Header */}
+        <Header mobileMenuOpen={mobileMenuOpen} setMobileMenuOpen={setMobileMenuOpen} />
 
-      <Hero
-        ref={heroRef}
-        onContactClick={handleContactClick}
-        onViewGrades={() => scrollToSection(healthBenefitsRef)}
-      />
-      <About ref={aboutRef} onContactClick={handleContactClick} />
-      <HealthBenefits ref={healthBenefitsRef} onContactClick={handleContactClick} />
-      <Ingredients ref={ingredientsRef} onContactClick={handleContactClick} />
-      <Process ref={processRef} />
-      <WhyUs ref={whyUsRef} />
-      <CTA ref={ctaRef} onContactClick={handleContactClick} onViewGrades={() => scrollToSection(healthBenefitsRef)} />
-      <Footer
-        scrollToSection={scrollToSection}
-        handleContactClick={handleContactClick}
-        refs={{
-          aboutRef,
-          healthBenefitsRef,
-          ingredientsRef,
-          processRef
-        }}
-      />
-    </div>
+        {/* Page Content */}
+        <main className="flex-grow">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/health-benefits" element={<HealthBenefits />} />
+            <Route path="/ingredients" element={<Ingredients />} />
+            <Route path="/process" element={<Process />} />
+            <Route path="/why-us" element={<WhyUs />} />
+            <Route path="/contact" element={<Contact />} />
+            {/* <Route path="*" element={<NotFound />} /> */}
+          </Routes>
+        </main>
+
+        {/* Footer */}
+        <Footer />
+      </div>
+    </Router>
   );
 }
 
