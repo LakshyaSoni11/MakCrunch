@@ -98,29 +98,6 @@ export default function ContactPage({ onBackToHome }: ContactPageProps): JSX.Ele
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-stone-50 via-amber-50 to-emerald-50">
-      <header className="bg-white/95 backdrop-blur-md shadow-lg fixed w-full top-0 z-50">
-        <div className="container mx-auto px-6 py-4">
-          <div className="flex justify-between items-center">
-            <div className="flex items-center space-x-3">
-              <div className="p-2 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-xl">
-                <Leaf className="w-6 h-6 text-white" />
-              </div>
-              <div>
-                <h1 className="text-xl font-bold text-gray-900">RawMakha Export</h1>
-                <p className="text-xs text-gray-500">Premium Raw Fox Nuts</p>
-              </div>
-            </div>
-            <button
-              onClick={onBackToHome}
-              className="flex items-center space-x-2 text-emerald-700 hover:text-emerald-900 transition-colors font-medium"
-              aria-label="Back to home"
-            >
-              <span>Back to Home</span>
-              <X className="w-5 h-5" />
-            </button>
-          </div>
-        </div>
-      </header>
 
       <main className="container mx-auto px-6 py-24 max-w-4xl">
         <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-12 border border-emerald-100 mt-20">
