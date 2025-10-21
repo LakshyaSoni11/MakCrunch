@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
-
+import logo from "../public/assets/logo.png";
 interface HeaderProps {
   mobileMenuOpen: boolean;
   setMobileMenuOpen: (open: boolean) => void;
@@ -27,7 +27,7 @@ const Header: React.FC<HeaderProps> = ({ mobileMenuOpen, setMobileMenuOpen }) =>
           {/* LOGO */}
           <div className="flex items-center space-x-1">
             <Link to="/">
-              <img src="/src/public/assets/logo.png" className="h-12 w-auto" alt="FoxNut Exports Logo" />
+              <img src={logo} className="h-12 w-auto" alt="FoxNut Exports Logo" />
             </Link>
              <span className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-emerald-800">
             MakCrunch
