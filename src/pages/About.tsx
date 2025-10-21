@@ -187,7 +187,7 @@ const About: React.FC<AboutProps> = ({ onContactClick }) => {
           >
             <div className="relative rounded-3xl overflow-hidden shadow-2xl group float-animation">
               <img
-                src="https://img.freepik.com/premium-photo/makhana-fox-nuts-are-popular-snack-made-from-seeds-water-lily-plant-which-native-to-india_1029474-12319.jpg"
+                src="https://i0.wp.com/post.healthline.com/wp-content/uploads/2021/05/makhana-1296x728-header.jpg?w=1155&h=1528"
                 alt="Premium Fox Nuts - Raw Makhana"
                 className="w-full h-[520px] md:h-[600px] object-cover image-overlay"
               />
@@ -212,7 +212,6 @@ const About: React.FC<AboutProps> = ({ onContactClick }) => {
             <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-amber-300 rounded-full opacity-30 blur-3xl pointer-events-none pulse-glow" />
           </div>
         </div>
-      
 
         <div className="grid lg:grid-cols-2 gap-16 items-center mt-40">
           <div ref={contentRef}>
@@ -285,7 +284,7 @@ const About: React.FC<AboutProps> = ({ onContactClick }) => {
             <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-amber-300 rounded-full opacity-30 blur-3xl pointer-events-none pulse-glow" />
           </div>
         </div>
-        <div className="grid lg:grid-cols-2 gap-16 items-center mt-20">
+        {/* <div className="grid lg:grid-cols-2 gap-16 items-center mt-20">
           <div ref={contentRef}>
 
             <h2
@@ -348,8 +347,8 @@ const About: React.FC<AboutProps> = ({ onContactClick }) => {
             <div className="absolute -top-10 -right-10 w-40 h-40 bg-emerald-300 rounded-full opacity-30 blur-3xl pointer-events-none pulse-glow" />
             <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-amber-300 rounded-full opacity-30 blur-3xl pointer-events-none pulse-glow" />
           </div>
-        </div>
-            <div className='bg-emerald-50'>
+        </div> */}
+            <div className='pt-10'>
               <TimelineComp />
             </div>
         <div>

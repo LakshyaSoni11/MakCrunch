@@ -70,7 +70,7 @@ export function TimelineComp() {
           </div>
           <div className="grid grid-cols-2 gap-4">
             <img
-              src="https://images.unsplash.com/photo-1581093458791-9d42e7d6b2f4?w=800&q=80"
+              src="https://makhanawholesaler.com/wp-content/uploads/2025/07/unnamed.png"
               alt="Quality Testing"
               className="h-32 w-full rounded-xl object-cover shadow-lg border-2 border-amber-100 md:h-48 lg:h-64 hover:scale-105 transition-transform duration-300"
             />
@@ -203,12 +203,12 @@ export function TimelineComp() {
           </div>
           <div className="grid grid-cols-2 gap-4">
             <img
-              src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=800&q=80"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVHQHAaBKoM9_O0bWPa1_0CLW06YDg7J-saw&s"
               alt="Factory Expansion"
               className="h-32 w-full rounded-xl object-cover shadow-lg border-2 border-emerald-100 md:h-48 lg:h-64 hover:scale-105 transition-transform duration-300"
             />
             <img
-              src="https://images.unsplash.com/photo-1560493676-04071c5f467b?w=800&q=80"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiuLbFdrMzCmSSRm0wb4g1UBeUEhXMoAwjdQ&s"
               alt="Product Range"
               className="h-32 w-full rounded-xl object-cover shadow-lg border-2 border-emerald-100 md:h-48 lg:h-64 hover:scale-105 transition-transform duration-300"
             />
@@ -243,12 +243,12 @@ export function TimelineComp() {
           </div>
           <div className="grid grid-cols-2 gap-4">
             <img
-              src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=800&q=80"
+              src="https://cdn.shopify.com/s/files/1/0712/2101/8902/files/Mithila-Naturls_women_makhana1.jpg?v=1695019093"
               alt="Sustainable Packaging"
               className="h-32 w-full rounded-xl object-cover shadow-lg border-2 border-amber-100 md:h-48 lg:h-64 hover:scale-105 transition-transform duration-300"
             />
             <img
-              src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=800&q=80"
+              src="https://lh5.googleusercontent.com/S0DRGuD9vpxoMHloQ3N5FHsxRh11IJG6IkWS7H-djS2E9ZXbT_SCJxOLVazWwDjI9JvLqLRwegqlqP_XYDmVkEGt62SO4RX-Bpj7OTPJAZokOgWv8j7vUp6Ftgrw83iNeErhQho=s1600"
               alt="Women Empowerment"
               className="h-32 w-full rounded-xl object-cover shadow-lg border-2 border-amber-100 md:h-48 lg:h-64 hover:scale-105 transition-transform duration-300"
             />
@@ -312,7 +312,7 @@ export function TimelineComp() {
   ];
 
   return (
-    <div className="relative w-full overflow-clip bg-emerald-50">
+    <div className="relative w-full overflow-clip ">
       <div className="container mx-auto py-20">
         <div className="text-center mb-16">
           <div className="inline-block px-5 py-2 bg-emerald-100 rounded-full mb-4 shadow-sm">
