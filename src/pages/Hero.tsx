@@ -10,7 +10,7 @@ const Hero: React.FC = () => {
   const ctaRef = useRef<HTMLButtonElement | null>(null);
   const floatingImagesRef = useRef<HTMLDivElement | null>(null);
 
-   useEffect(() => {
+  useEffect(() => {
     const ctx = gsap.context(() => {
       // Header animations
       gsap.from('.header-logo', {
@@ -170,7 +170,7 @@ const Hero: React.FC = () => {
       </div>
 
       {/* ✅ Floating Images */}
-     <div ref={floatingImagesRef} className="absolute inset-0 z-0 pointer-events-none bg-transparent">
+      <div ref={floatingImagesRef} className="absolute inset-0 z-0 pointer-events-none bg-transparent">
         {floatingImages.map((img, index) => (
           <img
             key={index}
@@ -211,8 +211,9 @@ const Hero: React.FC = () => {
             ]}
             wrapper="span"
             speed={50}
-            style={{ fontSize: "1.8em", display: "inline-block" }}
+            className="inline-block text-2xl sm:text-3xl md:text-4xl lg:text-5xl"
             repeat={Infinity}
+
           />
         </div>
 
@@ -259,7 +260,7 @@ const Hero: React.FC = () => {
 
         <HealthBenefits />
 
-        
+
       </div>
     </section>
   );
