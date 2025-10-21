@@ -276,8 +276,7 @@ export function TimelineComp() {
           <div className="bg-gradient-to-br from-emerald-500 via-emerald-600 to-amber-500 rounded-2xl p-8 mb-8 text-white shadow-2xl">
             <h4 className="text-2xl font-black mb-4">Our Vision 2025</h4>
             <p className="text-white/90 mb-6 leading-relaxed">
-              Become India's #1 Makhana exporter, reaching 50+ countries, empowering 1000+ farmer families, and setting new benchmarks for quality and sustainability in the global superfood industry.
-            </p>
+Today's makcrunch foods pvt ltd is poised for a new phase of dynamic growth. Our human resource is well trained and motivated, our financial fundamentals are stronger. Our vision is to constantly set challenging goals for ourselves. We will continue to expand and diversify and be an example of a progressive company playing a dynamic role in the economic development of the Republic.            </p>
             <div className="grid grid-cols-3 gap-4">
               <div className="bg-white/20 backdrop-blur-sm rounded-xl p-4 text-center">
                 <div className="text-3xl font-black mb-1">50+</div>
