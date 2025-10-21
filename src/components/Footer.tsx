@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Award, ShieldCheck, Globe } from "lucide-react";
-
+import logo from "../public/assets/logo.png";
 const Footer: React.FC = () => {
   const navigate = useNavigate();
 
@@ -14,7 +14,7 @@ const Footer: React.FC = () => {
             <div className="flex items-center space-x-3 mb-4">
               <div className="p-2 rounded-xl">
                 <img
-                  src="/src/public/assets/logo.png"
+                  src={logo}
                   className="h-20"
                   alt="MakCrunch Logo"
                 />
