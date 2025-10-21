@@ -1,15 +1,16 @@
-import React, { useEffect, useRef } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { gsap } from 'gsap';
-import { Star, ArrowRight } from 'lucide-react';
-import { stats, floatingImages } from '../data/constants';
-
+import React, { useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
+import { gsap } from "gsap";
+import { Star, ArrowRight } from "lucide-react";
+import { stats, floatingImages } from "../data/constants";
+import { TypeAnimation } from "react-type-animation";
+import HealthBenefits from "./HealthBenefits";
 const Hero: React.FC = () => {
   const navigate = useNavigate();
-  const ctaRef = useRef(null);
-  const floatingImagesRef = useRef(null);
+  const ctaRef = useRef<HTMLButtonElement | null>(null);
+  const floatingImagesRef = useRef<HTMLDivElement | null>(null);
 
-  useEffect(() => {
+   useEffect(() => {
     const ctx = gsap.context(() => {
       // Header animations
       gsap.from('.header-logo', {
@@ -87,6 +88,46 @@ const Hero: React.FC = () => {
         ease: 'sine.inOut',
         delay: 1,
       });
+      gsap.to('.floating-image-4', {
+        y: -50,
+        duration: 4,
+        repeat: -1,
+        yoyo: true,
+        ease: 'sine.inOut',
+        delay: 1,
+      });
+      gsap.to('.floating-image-5', {
+        y: -55,
+        duration: 4,
+        repeat: -1,
+        yoyo: true,
+        ease: 'sine.inOut',
+        delay: 1,
+      });
+      gsap.to('.floating-image-6', {
+        y: -60,
+        duration: 4,
+        repeat: -1,
+        yoyo: true,
+        ease: 'sine.inOut',
+        delay: 1,
+      });
+      gsap.to('.floating-image-7', {
+        y: -65,
+        duration: 4,
+        repeat: -1,
+        yoyo: true,
+        ease: 'sine.inOut',
+        delay: 1,
+      });
+      gsap.to('.floating-image-8', {
+        y: -70,
+        duration: 4,
+        repeat: -1,
+        yoyo: true,
+        ease: 'sine.inOut',
+        delay: 1,
+      });
 
       gsap.to('.floating-shape', {
         rotation: 360,
@@ -121,14 +162,15 @@ const Hero: React.FC = () => {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-20 px-6 overflow-hidden pb-10">
-      {/* Floating background shapes */}
-      <div className="absolute inset-0 z-0">
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-amber-200 rounded-full opacity-20 blur-3xl"></div>
+    <section className="relative min-h-screen flex items-center justify-center pt-20  overflow-hidden pb-10 bg-gradient-to-b from-emerald-50 to-white">
+      {/* ✅ Soft Background Glow */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-amber-200 rounded-full opacity-25 blur-3xl"></div>
+        <div className="absolute top-20 left-10 w-80 h-80 bg-emerald-200 rounded-full opacity-20 blur-3xl"></div>
       </div>
 
-      {/* Floating images */}
-      <div ref={floatingImagesRef} className="absolute inset-0 z-0 pointer-events-none bg-transparent">
+      {/* ✅ Floating Images */}
+     <div ref={floatingImagesRef} className="absolute inset-0 z-0 pointer-events-none bg-transparent">
         {floatingImages.map((img, index) => (
           <img
             key={index}
@@ -141,8 +183,8 @@ const Hero: React.FC = () => {
         ))}
       </div>
 
-      {/* Hero Content */}
-      <div className="relative z-10 text-center max-w-6xl">
+      {/* ✅ HERO CONTENT */}
+      <div className="relative z-10 text-center max-w-6xl pt-10">
         <div className="hero-badge inline-flex items-center space-x-2 px-6 py-3 bg-white/90 backdrop-blur-sm rounded-full mb-8 shadow-xl border border-emerald-100">
           <Star className="w-5 h-5 text-amber-500 fill-amber-500" />
           <span className="text-emerald-800 font-bold text-sm">
@@ -150,6 +192,31 @@ const Hero: React.FC = () => {
           </span>
         </div>
 
+        {/* ✅ Animated Tagline */}
+        <div className="flex items-center justify-center text-emerald-600 text-3xl py-10 md:py-16">
+          <TypeAnimation
+            sequence={[
+              "500+ Tons Processed Annually",
+              1200,
+              "15+ Countries Served",
+              1200,
+              "98% Customer Retention Rate",
+              1200,
+              "24/7 Customer Support",
+              1200,
+              "10,000+ Sq Ft Processing Facility",
+              1200,
+              "100% Quality Assurance",
+              1200,
+            ]}
+            wrapper="span"
+            speed={50}
+            style={{ fontSize: "1.8em", display: "inline-block" }}
+            repeat={Infinity}
+          />
+        </div>
+
+        {/* ✅ Headline */}
         <h1 className="hero-title text-5xl md:text-7xl lg:text-8xl font-black text-gray-900 mb-6 leading-tight">
           Premium Raw <br />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-emerald-800">
@@ -162,19 +229,10 @@ const Hero: React.FC = () => {
           for manufacturers, processors & retailers worldwide.
         </p>
 
-        {/* CTA Buttons */}
-        <div className="hero-cta flex flex-col sm:flex-row items-center justify-center gap-4">
-          <button
-            ref={ctaRef}
-            onClick={() => navigate('/contact')}
-            className="group px-10 py-5 bg-gradient-to-r from-emerald-600 to-emerald-700 text-white text-lg font-bold rounded-2xl shadow-2xl hover:shadow-3xl transition-all inline-flex items-center space-x-3 hover:-translate-y-1"
-          >
-            <span>Request Bulk Quote</span>
-            <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
-          </button>
-        </div>
+        {/* ✅ CTA Button */}
+        
 
-        {/* Stats Section */}
+        {/* ✅ Stats Section */}
         <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
           {stats.map((stat, index) => (
             <div
@@ -188,6 +246,19 @@ const Hero: React.FC = () => {
               <div className="text-sm text-gray-600 font-medium">{stat.label}</div>
             </div>
           ))}
+        </div>
+
+        <HealthBenefits />
+
+        <div className="hero-cta flex flex-col sm:flex-row items-center justify-center pt-10 gap-4">
+          <button
+            ref={ctaRef}
+            onClick={() => navigate("/contact")}
+            className="group px-10 py-5 bg-gradient-to-r from-emerald-600 to-emerald-700 text-white text-lg font-bold rounded-2xl shadow-2xl hover:shadow-emerald-500/40 transition-all inline-flex items-center space-x-3 hover:-translate-y-1"
+          >
+            <span>Request Bulk Quote</span>
+            <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
+          </button>
         </div>
       </div>
     </section>

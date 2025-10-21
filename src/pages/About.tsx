@@ -1,9 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import { ArrowRight, ShieldCheck, Factory, Award, FileCheck, Briefcase, Globe } from 'lucide-react';
 import { aboutStats } from '../data/constants';
-import { TypeAnimation } from 'react-type-animation';
 import { TimelineComp } from '../components/TimelineComp';
-
+import profile1 from "../public/assets/profile1.jpg"
 interface AboutProps {
   onContactClick?: () => void;
 }
@@ -213,29 +212,7 @@ const About: React.FC<AboutProps> = ({ onContactClick }) => {
             <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-amber-300 rounded-full opacity-30 blur-3xl pointer-events-none pulse-glow" />
           </div>
         </div>
-        <div className='flex items-center text-center justify-center text-emerald-600 text-3xl mt-20'>
-          <TypeAnimation
-            sequence={[
-              // Same substring at the start will only be typed out once, initially
-              '500+ Tons Processed Annually',
-              1000, // wait 1s before replacing "Mice" with "Hamsters"
-              '15+ Countries Served',
-              1000,
-              '98% Customer Retention Rate',
-              1000,
-              '24/7 Customer Support',
-              1000,
-              '10,000+ Sq Ft Processing Facility',
-              1000,
-              '100% Quality Assurance',
-              1000
-            ]}
-            wrapper="span"
-            speed={50}
-            style={{ fontSize: '2em', display: 'inline-block' }}
-            repeat={Infinity}
-          />
-        </div>
+      
 
         <div className="grid lg:grid-cols-2 gap-16 items-center mt-40">
           <div ref={contentRef}>
@@ -298,8 +275,8 @@ const About: React.FC<AboutProps> = ({ onContactClick }) => {
           >
             <div className=" overflow-hidden shadow-2xl rounded-full group float-animation">
               <img
-                src="https://img.freepik.com/premium-photo/makhana-fox-nuts-are-popular-snack-made-from-seeds-water-lily-plant-which-native-to-india_1029474-12319.jpg"
-                alt="Premium Fox Nuts - Raw Makhana"
+                src={profile1}
+                alt="Profile Photo"
                 className="w-full h-[520px] md:h-[600px] object-cover image-overlay"
               />
             </div>

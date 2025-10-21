@@ -325,13 +325,29 @@ export const floatingImages: FloatingImage[] = [
       'floating-image-4 absolute bottom-10 left-16 w-40 h-40 rounded-2xl object-cover opacity-30 hidden lg:block'
   },
   {
-    src: bott_img,
+    src: center_ing,
     className:
-      'floating-image-5 absolute top-1/2 right-1/4 w-28 h-28 rounded-2xl object-cover opacity-30 hidden lg:block'
+      'floating-image-5 absolute top-1/3 right-20 w-28 h-28 rounded-2xl object-cover opacity-30 hidden lg:block'
+  },
+  {
+    src: center_ing,
+    className:
+      'floating-image-6 absolute bottom-1/2 left-20 w-28 h-28 rounded-2xl object-cover opacity-30 hidden lg:block'
   },
   {
     src: bott_img,
     className:
-      'floating-image-6 absolute top-60 left-1/4 w-28 h-28 rounded-2xl object-cover opacity-30 hidden lg:block'
+      'floating-image-7 absolute top-60 left-1/4 w-28 h-28 rounded-2xl object-cover opacity-30 hidden lg:block'
+  },
+  {
+    src: bott_img,
+    className:
+      'floating-image-8 absolute top-60 right-1/4 w-28 h-28 rounded-2xl object-cover opacity-30 hidden lg:block'
+  },
+  {
+    src: bott_img,
+    className:
+      'floating-image-9 absolute bottom-80 left-2/5 w-28 h-28 rounded-2xl object-cover opacity-30 hidden lg:block'
   }
 ];
+

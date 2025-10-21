@@ -13,7 +13,6 @@ const Header: React.FC<HeaderProps> = ({ mobileMenuOpen, setMobileMenuOpen }) =>
   const navItems = [
     { name: 'Home', path: '/' },
     { name: 'About', path: '/about' },
-    { name: 'Grades', path: '/health-benefits' }, // or /grades if you rename the page
     { name: 'Process', path: '/process' },
     { name: 'Why Us', path: '/why-us' },
   ];

@@ -80,7 +80,7 @@ const HealthBenefits = forwardRef<HTMLDivElement, HealthBenefitsProps>(function 
   return (
     <section
       ref={ref}
-      className="py-24 px-6 bg-gradient-to-br from-white via-emerald-50 to-blue-50 relative overflow-hidden"
+      className="py-24 bg-transparent relative overflow-hidden"
     >
       {/* Decorative background elements */}
       <div className="absolute top-20 right-10 w-72 h-72 bg-emerald-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
