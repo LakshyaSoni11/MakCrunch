@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { ArrowRight, ShieldCheck, Factory, Award, FileCheck, Briefcase, Globe } from 'lucide-react';
-import { aboutStats } from '../data/constants';
+// import { aboutStats } from '../data/constants';
 import { TimelineComp } from '../components/TimelineComp';
 import profile1 from "../public/assets/profile1.jpg"
 interface AboutProps {
@@ -11,20 +11,20 @@ const About: React.FC<AboutProps> = ({ onContactClick }) => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLDivElement>(null);
-  const statsRef = useRef<HTMLDivElement>(null);
+  // const statsRef = useRef<HTMLDivElement>(null);
   const badgeRef = useRef<HTMLDivElement>(null);
   const headingRef = useRef<HTMLHeadingElement>(null);
   const paragraphsRef = useRef<(HTMLParagraphElement | null)[]>([]);
   const buttonRef = useRef<HTMLButtonElement>(null);
 
-  const iconMap: Record<string, React.ComponentType<{ className: string }>> = {
-    Factory,
-    ShieldCheck,
-    Award,
-    FileCheck,
-    Briefcase,
-    Globe,
-  };
+  // const iconMap: Record<string, React.ComponentType<{ className: string }>> = {
+  //   Factory,
+  //   ShieldCheck,
+  //   Award,
+  //   FileCheck,
+  //   Briefcase,
+  //   Globe,
+  // };
 
   useEffect(() => {
     const observerOptions = {
@@ -356,7 +356,7 @@ const About: React.FC<AboutProps> = ({ onContactClick }) => {
         </div>
 
 
-        <div
+        {/* <div
           ref={statsRef}
           className="mt-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"
         >
@@ -379,7 +379,7 @@ const About: React.FC<AboutProps> = ({ onContactClick }) => {
               </div>
             );
           })}
-        </div>
+        </div> */}
       </div>
     </section>
   );
